@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>研究テーマ1 | 広島大学 廣田研究室</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <p class="header-program">広島大学大学院統合生命科学研究科 生物工学プログラム</p>
+        <h1>環境微生物工学研究室（廣田研究室）</h1>
+        <p class="header-en">Environmental Microbial Biotechnology Laboratory</p>
+      </div>
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <div class="container nav-inner">
+          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list">MENU</button>
+          <ul id="menu-list">
+            <li><a href="index.html#home">HOME</a></li>
+            <li><a href="index.html#news">NEWS</a></li>
+            <li><a href="index.html#research">RESEARCH</a></li>
+            <li><a href="index.html#papers">PAPERS</a></li>
+            <li><a href="index.html#presentation">PRESENTATION</a></li>
+            <li><a href="index.html#people">PEOPLE</a></li>
+            <li><a href="index.html#contact-access">CONTACT・ACCESS</a></li>
+            <li><a href="index.html#links">LINK</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="section container">
+      <p><a class="btn btn-outline" href="index.html#research">研究テーマ一覧に戻る</a></p>
+      <article class="research-block">
+        <h2>1. リンの生物循環に関する研究</h2>
+        <p>リン（P）は核酸やATPの成分として生物に必須であり、肥料・工業用途でも不可欠です。一方で、リン鉱石資源の偏在と減少、水圏への流出による富栄養化といった課題を同時に抱えています。</p>
+        <p>私たちは、多様な環境からリン循環に関わる微生物を探索し、酵素・遺伝子レベルで機能を解析することで、リン資源の有効利用と環境負荷低減につながる技術開発を進めています。</p>
+        <figure class="research-figure">
+          <img src="assets/docx/word/media/image2.png" alt="Planetary Boundariesにおけるリンと窒素の位置づけ" loading="lazy" />
+          <figcaption>地球の限界（Planetary Boundaries, 2015年版）</figcaption>
+        </figure>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h2>環境微生物工学研究室（廣田研究室）</h2>
+          <p>広島大学大学院統合生命科学研究科 生物工学プログラム</p>
+        </div>
+        <div>
+          <a class="univ-link-image" href="https://www.hiroshima-u.ac.jp/" target="_blank" rel="noopener noreferrer">
+            <img src="h1_title-1.png" alt="広島大学 公式サイト" loading="lazy" />
+          </a>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Ryuichi Hirota Laboratory</p>
+    </footer>
+
+    <script>
+      const siteHeader = document.querySelector('.site-header');
+      const menuBtn = document.querySelector('.menu-btn');
+      const menuList = document.querySelector('#menu-list');
+      const syncHeaderOffset = () => document.documentElement.style.setProperty('--header-offset', `${siteHeader.offsetHeight}px`);
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        menuList.classList.toggle('open');
+        syncHeaderOffset();
+      });
+      window.addEventListener('resize', syncHeaderOffset);
+      syncHeaderOffset();
+      document.querySelector('#year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

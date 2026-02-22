@@ -102,8 +102,9 @@ h1 {
 
 .hero {
   position: relative;
-  min-height: 540px;
-  background: url('assets/docx/word/media/image1.png') center / cover no-repeat fixed;
+  min-height: 400px;
+  max-height: 480px;
+  background: url('/S__9396338のコピー.jpg') center / cover no-repeat fixed;
   overflow: hidden;
 }
 
@@ -119,7 +120,8 @@ h1 {
   z-index: 1;
   min-height: 540px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   padding: clamp(2rem, 4vw, 3rem) 0;
 }
 

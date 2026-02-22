@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>発表情報 過去一覧 | 広島大学 廣田研究室</title>
+    <meta name="description" content="廣田研究室の発表情報・過去一覧です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <p class="header-program">広島大学大学院統合生命科学研究科 生物工学プログラム</p>
+        <h1>環境微生物工学研究室（廣田研究室）</h1>
+      </div>
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <div class="container nav-inner">
+          <ul id="menu-list">
+            <li><a href="index.html#presentation">PRESENTATIONに戻る</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section container">
+        <header class="section-head">
+          <p>PRESENTATION</p>
+          <h2>過去一覧</h2>
+        </header>
+        <p class="note">最新3件はトップページに掲載し、ここではそれ以外を表示しています。</p>
+        <div id="archive-list" class="archive-wrap"></div>
+      </section>
+    </main>
+
+    <script>
+      const sourcePath = 'assets/presentation-source.txt';
+      const archiveRoot = document.querySelector('#archive-list');
+
+      const addHeading = (tagName, className, text) => {
+        const node = document.createElement(tagName);
+        node.className = className;
+        node.textContent = text;
+        archiveRoot.appendChild(node);
+      };
+
+      const addEntry = (block) => {
+        const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+        if (!lines.length) return;
+
+        const item = document.createElement('article');
+        item.className = 'archive-item';
+
+        const title = document.createElement('p');
+        title.className = 'archive-item-title';
+        title.textContent = lines[0];
+        item.appendChild(title);
+
+        if (lines.length > 1) {
+          const body = document.createElement('p');
+          body.className = 'archive-item-body';
+          body.textContent = lines.slice(1).join('\n');
+          item.appendChild(body);
+        }
+
+        archiveRoot.appendChild(item);
+      };
+
+      fetch(sourcePath)
+        .then((response) => {
+          if (!response.ok) throw new Error('failed to load archive data');
+          return response.text();
+        })
+        .then((text) => {
+          const blocks = text
+            .replace(/\r\n/g, '\n')
+            .split(/\n{2,}/)
+            .map((block) => block.trim())
+            .filter(Boolean);
+
+          let currentCategory = '';
+          let currentYear = '';
+          let skippedLatest = 0;
+
+          blocks.forEach((block) => {
+            if (block === 'PRESENTATION') return;
+
+            if (['国内学会', '国際学会', 'シンポジウム・招待講演'].includes(block)) {
+              currentCategory = block;
+              addHeading('h3', 'archive-cat', block);
+              return;
+            }
+
+            if (/^\d{4}$/.test(block)) {
+              currentYear = block;
+              addHeading('h4', 'archive-year', `${block}年`);
+              return;
+            }
+
+            if (currentCategory === '国内学会' && currentYear === '2025' && skippedLatest < 3) {
+              skippedLatest += 1;
+              return;
+            }
+
+            addEntry(block);
+          });
+        })
+        .catch(() => {
+          const fallback = document.createElement('p');
+          fallback.className = 'note';
+          fallback.textContent = '発表一覧データを読み込めませんでした。';
+          archiveRoot.appendChild(fallback);
+        });
+    </script>
+  </body>
+</html>
