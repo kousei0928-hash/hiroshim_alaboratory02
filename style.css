@@ -208,6 +208,14 @@ h1 {
   padding: 2rem 0;
 }
 
+.section.page-top-tight {
+  padding-top: 0.9rem;
+}
+
+.page-top-tight > p:first-child {
+  margin-top: 0;
+}
+
 section[id] {
   scroll-margin-top: calc(var(--header-offset, 0px) + 12px);
 }
@@ -555,7 +563,6 @@ section[id] {
 
 .btn {
   display: inline-block;
-  margin-top: 0.7rem;
   background: var(--brand);
   color: #fff;
   text-decoration: none;
@@ -729,6 +736,8 @@ section[id] {
   .section {
     padding: 3rem 0;
   }
+
+
 }
 
 @media (prefers-reduced-motion: reduce) {
