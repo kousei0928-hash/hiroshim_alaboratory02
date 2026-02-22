@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>広島大学 廣田研究室 | 環境微生物工学研究室</title>
+    <meta
+      name="description"
+      content="広島大学大学院統合生命科学研究科 生物工学プログラム 環境微生物工学研究室（廣田研究室）の公式サイトです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.documentElement.classList.add('js');
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      const navEntry = performance.getEntriesByType('navigation')[0];
+      if (navEntry && navEntry.type === 'reload') {
+        if (location.hash) {
+          history.replaceState(null, '', location.pathname + location.search);
+        }
+        window.scrollTo(0, 0);
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <h4>環境微生物工学研究室（廣田研究室）</h4>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list">
+          MENU
+        </button>
+      </div>
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <div class="container nav-inner">
+          <ul id="menu-list">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#research">RESEARCH</a></li>
+            <li><a href="#papers">PAPERS</a></li>
+            <li><a href="#presentation">PRESENTATION</a></li>
+            <li><a href="#people">PROFILE</a></li>
+            <li><a href="#contact-access">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-label="メインビジュアル">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h2>広島大学大学院統合生命科学研究科<br />生物工学プログラム</h2>
+            <h4>微生物の機能を理解し、その工学的利用により地球規模課題の解決に取り組む。<br />〜基礎から応用まで〜</h4>
+            <p class="hero-lead">
+              現在の地球環境は多くのさまざまな微生物の機能が関わって形成されてきました。そこには極めて多様な微生物と、驚くほど巧妙に進化したその機能が関わっています。私たちは、リンの物質循環を通じて細菌（バクテリア）と環境、さらには微生物同士の関係を理解し、持続可能な循環型社会構築に役立つバイオテクノロジーとして利用する研究を行っています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="section section-alt">
+        <div class="container">
+          <header class="section-head">
+            <p>NEWS</p>
+            <h2>お知らせ</h2>
+          </header>
+          <ul class="news-list">
+            <li>
+              <time datetime="2025-12">2025.2.21</time>
+              <span>ホームページを開設しました</span>
+            </li>
+        </div>
+      </section>
+
+      <section id="research" class="section container">
+        <header class="section-head">
+          <p>RESEARCH</p>
+          <h2>研究テーマ</h2>
+        </header>
+
+        <div class="cards">
+          <a class="card card-link" href="research-1.html">
+            <h3>1. リンの生物循環に関する研究</h3>
+            <p>リン資源枯渇と環境負荷の二面性に着目し、微生物によるリン循環機能を解明します。</p>
+            <p class="card-cta">詳細を見る</p>
+          </a>
+          <a class="card card-link" href="research-2.html">
+            <h3>2. バクテリアのリン代謝経路の解明と応用</h3>
+            <p>多様なリン化合物の取り込み・変換機構を解析し、応用技術へ展開します。</p>
+            <p class="card-cta">詳細を見る</p>
+          </a>
+          <a class="card card-link" href="research-3.html">
+            <h3>3. リンの酸化と還元</h3>
+            <p>リン化合物の酸化還元を担う微生物機能と、生命エネルギー獲得機構を検証します。</p>
+            <p class="card-cta">詳細を見る</p>
+          </a>
+          <a class="card card-link" href="research-4.html">
+            <h3>4. リン代謝のデザインとバイオテクノロジー</h3>
+            <p>リン代謝を設計し、生物学的封じ込め技術などの新規バイオセーフティーへ展開します。</p>
+            <p class="card-cta">詳細を見る</p>
+          </a>
+          <a class="card card-link" href="research-5.html">
+            <h3>5. 微生物の捕食-被食相互作用と生存戦略</h3>
+            <p>食物連鎖を介した相互作用と、形態変化による生存戦略を明らかにします。</p>
+            <p class="card-cta">詳細を見る</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="papers" class="section section-alt">
+        <div class="container">
+          <header class="section-head">
+            <p>PAPERS</p>
+            <h2>研究業績</h2>
+          </header>
+          <div class="list-grid">
+            <a class="list-card-link" href="papers-academic.html">
+              <h3>学術論文</h3>
+              <p class="card-t">一覧を見る</p>
+            </a>
+            <a class="list-card-link" href="papers-books.html">
+              <h3>著書</h3>
+              <p class="card-t">一覧を見る</p>
+            </a>
+            <a class="list-card-link" href="papers-patents.html">
+              <h3>特許</h3>
+              <p class="card-t">一覧を見る</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="presentation" class="section container">
+        <header class="section-head">
+          <p>PRESENTATION</p>
+          <h2>発表情報</h2>
+        </header>
+        <ul class="presentation-list">
+          <li>
+            <time datetime="2025-09-12">2025.9.12</time>
+            <span>還元型リン化合物をリン源とした目的微生物の選択培養（第77回 日本生物工学会大会）</span>
+          </li>
+          <li>
+            <time datetime="2025-09-12">2025.9.12</time>
+            <span>ギ酸輸送体FocAを用いた次亜リン酸依存性生物学的封じ込め手法の汎用性向上（第77回 日本生物工学会大会）</span>
+          </li>
+          <li>
+            <time datetime="2025-09-11">2025.9.11</time>
+            <span>Toxin/Anti-toxinシステムと亜リン酸依存性を利用したハイブリッドバイオセーフティ技術の開発（第77回 日本生物工学会大会）</span>
+          </li>
+        </ul>
+        <p><a class="btn btn-outline" href="presentations.html">過去一覧を見る</a></p>
+      </section>
+
+      <section id="people" class="section section-alt">
+        <div class="container">
+          <header class="section-head">
+            <p>PROFILE</p>
+            <h2>教授の紹介</h2>
+          </header>
+          <div class="members-grid">
+            <article>
+              <figure class="member-photo">
+                <img src="/hirota-1024x1024.jpg" alt="廣田隆一 教授" loading="lazy" />
+              </figure>
+              <p>廣田隆一（Ryuichi Hirota）</p>
+              <p>広島大学大学院統合生命科学研究科</p>
+              <p>広島大学工学部第三類（化学系）</p>
+              <p>生物工学プログラム・教授</p>
+              <h4>経歴</h4>
+              <ul>
+                <li>1993 熊本県立済々黌高等学校卒業</li>
+                <li>1997 広島大学工学部第三類（化学系） 卒業</li>
+                <li>2002 広島大学大学院先端物質科学研究科 博士課程後期修了（博士（工学））</li>
+                <li>2002 東和科学株式会社博士研究員（JST研究成果活用プラザ広島 吉里プロジェクト）</li>
+                <li>2005 筑波大学大学院生命環境科学研究科 博士研究員</li>
+                <li>2007 広島大学大学院先端物質科学研究科 助教</li>
+                <li>2013 米国イリノイ大学アーバナ・シャンペーン校 客員研究員(-2014, 11)</li>
+                <li>2017 広島大学大学院先端物質科学研究科 准教授</li>
+                <li>2024 広島大学大学院統合生命科学研究科 教授</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-access" class="section container">
+        <header class="section-head">
+          <p>CONTACT・ACCESS</p>
+          <h2>お問い合わせ・アクセス</h2>
+        </header>
+        <div class="contact-card">
+          <p>広島大学大学院統合生命科学研究科 生物工学プログラム</p>
+          <p>環境微生物工学研究室（廣田研究室）</p>
+          <p>〒739-8530 東広島市鏡山1-3-1 広島大学先端科学総合研究棟</p>
+          <p>502N（実験室）, 503N（居室）</p>
+          <p>TEL (FAX): 082-424-7749 (7047)</p>
+          <p>Email: <a href="mailto:hirota@hiroshima-u.ac.jp">hirota@hiroshima-u.ac.jp</a></p>
+          <p><a class="btn btn-outline" href="contact.html">お問い合わせフォーム</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <h2>環境微生物工学研究室（廣田研究室）</h2>
+          <p>広島大学大学院統合生命科学研究科 生物工学プログラム</p>
+        </div>
+        <div>
+          <a
+            class="univ-link-image"
+            href="https://www.hiroshima-u.ac.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="h1_title-1.png" alt="広島大学 公式サイト" loading="lazy" />
+          </a>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Ryuichi Hirota Laboratory</p>
+    </footer>
+
+    <script>
+      const siteHeader = document.querySelector('.site-header');
+      const menuBtn = document.querySelector('.menu-btn');
+      const menuList = document.querySelector('#menu-list');
+      const syncHeaderOffset = () => {
+        document.documentElement.style.setProperty('--header-offset', `${siteHeader.offsetHeight}px`);
+      };
+
+      menuBtn.addEventListener('click', () => {
+        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!expanded));
+        menuList.classList.toggle('open');
+        syncHeaderOffset();
+      });
+
+      window.addEventListener('resize', syncHeaderOffset);
+      syncHeaderOffset();
+      document.querySelector('#year').textContent = new Date().getFullYear();
+
+      const revealGroups = [
+        '.section-head',
+        '.news-list li',
+        '.cards .card',
+        '.list-grid .list-card-link',
+        '.presentation-list li',
+        '.members-grid article',
+        '.contact-card',
+        '.footer-inner > div'
+      ];
+
+      const revealTargets = document.querySelectorAll(revealGroups.join(', '));
+      revealTargets.forEach((element, index) => {
+        element.classList.add('reveal');
+        element.style.setProperty('--reveal-delay', `${(index % 4) * 80}ms`);
+      });
+
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.15, rootMargin: '0px 0px -12% 0px' }
+        );
+
+        revealTargets.forEach((element) => revealObserver.observe(element));
+      } else {
+        revealTargets.forEach((element) => element.classList.add('is-visible'));
+      }
+
+      requestAnimationFrame(() => {
+        document.body.classList.add('is-loaded');
+      });
+    </script>
+  </body>
+</html>
